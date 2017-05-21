@@ -1,0 +1,538 @@
+create database shouyou  default charset=utf8 ;
+use shouyou;
+create table user(
+ password varchar(20),
+ name varchar(20) primary key,
+ QQ varchar(20),
+ phone varchar(20),
+ state varchar(20)
+)default charset=utf8;
+create table buyOrder(
+ productListIndex int,
+ account varchar(20),
+ password varchar(20),
+ own varchar(20),
+ listIndex int AUTO_INCREMENT primary key,
+ time varchar(20),
+ orderName varchar(50),
+ price varchar(20),
+ sellNumber varchar(20),
+ state varchar(20),
+ system varchar(20),
+ level varchar(20),
+ game varchar(20),
+ information varchar(20)
+)default charset=utf8;
+create table sellOrder(
+ own varchar(20),
+ productListIndex int,
+ listIndex int AUTO_INCREMENT primary key,
+ time varchar(20),
+ orderName varchar(50),
+ price varchar(20),
+ sellNumber varchar(20),
+ state varchar(20),
+ system varchar(20),
+ level varchar(20),
+ game varchar(20),
+ information varchar(20)
+)default charset=utf8;
+create table product(
+ listIndex int AUTO_INCREMENT primary key,
+ sellNumber varchar(50),
+ own varchar(20),
+ system varchar(20),
+ productName varchar(20),
+ game varchar(20),
+ level varchar(20),
+ price int,
+ account
+ varchar(20),
+ remaining varchar(20),
+ password varchar(20),
+ information varchar(20)
+)default charset=utf8;
+create table message(
+ listIndex int AUTO_INCREMENT primary key,
+ title text,
+ type varchar(20),
+ time varchar(20),
+ own varchar(20),
+ see varchar(20),
+ text text
+)default charset=utf8;
+create table kefu(
+ user varchar(20),
+ text text
+)default charset=utf8;
+create table admin(
+ name varchar(20),
+ password varchar(20)
+)
+
+
+
+
+create table p(
+ admin varchar(20)
+)default charset=utf8;
+create table test(
+ diyi varchar(20),
+ dier varchar(20),
+ disan varchar(20)
+)default charset=utf8;
+
+
+// 客服
+
+
+
+
+	<class name ="User" table="user">
+		<id name="name">
+		
+		</id>
+		<property name ="password"/>
+		<property name ="qq"/>
+		<property name ="phone"/>
+		<list name="product" table="product">
+			<key column="user"/>
+			<list-index column="listIndex"/>
+			<composite-element class="Product">
+				<id name="productName">
+				</id>
+				<property name=" game"/>
+				<property name="level"/>
+				<property name="price"/>
+				<property name="information"/>
+			</composite-element>
+		</list>
+		<list name="buyOrder" table="buyOrder">
+			<key column="user"/>
+			<list-index column="listIndex"/>
+			<composite-element class="BuyOrder">
+				<id name="number">
+				</id>
+				<property name=" time"/>
+				<property name="orderName"/>
+				<property name="price"/>
+				<property name="sellNumber"/>
+				<property name=" state"/>
+				<property name=" system"/>
+				<property name=" level"/>
+				<property name=" game"/>
+			</composite-element>
+		</list>
+				<list name="sellOrder" table="sellOrder">
+			<key column="user"/>
+			<list-index column="listIndex"/>
+			<composite-element class="SellOrder">
+				<id name="number">
+				</id>
+				<property name=" time"/>
+				<property name="orderName"/>
+				<property name="price"/>
+				<property name="sellNumber"/>
+				<property name=" state"/>
+				<property name=" system"/>
+				<property name=" level"/>
+				<property name=" game"/>
+			</composite-element>
+		</list>
+	</class>
+
+
+
+	<class name ="P" table="p">
+		<id name="admin">
+		
+		</id>
+		<list name="list" table="product">
+			<key column="user"/>
+			<list-index column="listIndex"/>
+			<composite-element class="Product">
+				<property name="productName"/>
+				<property name="level"/>
+				<property name="price"/>
+				<property name="information"/>
+				<property name="game"/>
+			</composite-element>
+		</list>
+	</class>
+	<class name="Product" table="product">
+				<id name="productName">
+				
+				</id>
+				<property name="game"/>
+				<property name="level"/>
+				<property name="price"/>
+				<property name="information"/>
+	</class>
+	
+
+
+
+
+
+		List p1 = sess.createQuery("select * from user where name =:name")
+				.setString("name", user.getName()).list();
+		if(p1.size()!=0){
+			flag = true;
+		}
+
+		List p1 = sess.createQuery("select * from user where name =:name")
+				.setString("name", user.getName()).list();
+		if(((User)p1.get(0)).getPassword().equals(user.getPassword())){
+			flag =true;
+		}
+
+
+
+
+
+<body>
+	<div class="mycenter-head">
+		<ul >
+		<li class="title1">商品名称</li>
+		<li class="title2">单价（元）</li>
+		<li class="title3">库存</li>
+		<li class="title4">商品状态</li>
+		<li class="title5">操作</li>
+		</ul>
+	</div>
+<% 
+	HttpSession sess =request.getSession();
+	String name = (String)sess.getAttribute("User");
+	List<Product> list = null;
+	list = ProductFactory.get().findByOwn(name);
+	for(Product product:list){
+%>						
+	<div class="booking-table">
+		<ul >
+			<li class="item-info">
+				<div class="head">
+					<span>寄售</span>
+				</div>
+				<div class="con">
+					<span class="name">
+						<a href="product.jsp?listIndex=<%=product.getListIndex()%>"><%= product.getProductName()%></a>
+					</span>
+					<span class="unit"><%=product.getPrice() %></span>
+					<span class="count">1</span>
+					<span class="status">交易成功</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<%
+	}
+	%>
+
+
+
+
+
+
+
+	<class name ="BuyOrder" table="buyOrder">
+		<id name="listIndex">
+			<generator class="native"/>
+		</id>
+
+		<property name="system"/>
+		<property name="time"/>
+		<property name="orderName"/>
+		<property name="level"/>
+		<property name="game"/>
+		<property name="own"/>
+		<property name="price"/>
+		<property name="information"/>
+		<property name="sellNumber"/>
+		<property name="state"/>
+
+	</class>
+			<class name ="SellOrder" table="sellOrder">
+		<id name="listIndex">
+			<generator class="native"/>
+		</id>
+
+		<property name="system"/>
+		<property name="time"/>
+		<property name="orderName"/>
+		<property name="level"/>
+		<property name="game"/>
+		<property name="own"/>
+		<property name="price"/>
+		<property name="information"/>
+		<property name="sellNumber"/>
+		<property name="state"/>
+
+	</class>
+
+
+
+
+<div class="managementRight">
+			<div class="search">
+				<div class="search1">
+					<form action="">
+						管理我的商品<br>
+						选择游戏 
+						<select>
+							<option name="">
+							</option>
+								</select>
+						</select> 
+						商品类型
+						 <select>
+							<option name="">
+							</option>
+						</select><br>
+						创建时间 
+						<input type="text" name="">
+						商品状态
+						 <select>
+							<option name="">
+							</option>
+						</select>
+						<input type="submit" value="查找">
+					</form>
+				</div>
+				<div class="search2">
+					<ul>
+						<li>
+							全部商品
+						</li>
+						<li>
+							待提交
+						</li>
+						<li>
+							审核中
+						</li>
+						<li>
+							已上架
+						</li>
+						<li>
+							已下架
+						</li>
+						<li>
+							库存为零
+						</li>				
+					</ul>
+				</div>
+
+				<div class="search4">
+					<div class="mycenter-sort">
+						<span class="game-sort"><span class="title">订单排序</span>
+						<select class="select" id="orderBySel">
+							<option value="1" >按时间由近到远</option>
+							<option value="2" >按时间由远到近</option>
+						</select></span>
+					</div>
+					<ul class="mycenter-head">
+						<li class="title1">商品名称</li>
+						<li class="title2">单价（元）</li>
+						<li class="title3">数量</li>
+						<li class="title4">总价（元）</li>
+						<li class="title5">交易状态</li>
+					</ul>
+					<ul class="booking-table">
+						<li class="item-info">
+							<div class="head">
+								<span class="goods">雷霆帐号</span><span class="goods-no">订单号：1465010208041355</span>
+								<span class="goods-time">
+									订单时间：
+									 2016-06-04 11:16:56					</span>
+							</div>
+							<div class="con">
+								<span class="name">
+									<a href="http://www.jiaoyimao.com/goods/1464844247219114.html" target="_blank">问道【苹果版】【76级云霄洞】1130年2W伤极品BB三无</a>
+								</span>
+								<span class="unit">460.0</span>
+								<span class="count">1</span>
+								<span class="total">&yen;460.0</span>
+								<span class="status">交易成功</span>
+								<span class="control">
+																					<a href="http://www.jiaoyimao.com/sellerChatHistory/b8056fa5dcbfb06cea4c9458a31bcb8c?orderNo=1465010208041355" class="btn-default-xs has-message">查看历史对话
+																</a>
+														</span>
+								<span class="links"><a href="https://www.jiaoyimao.com/seller/orderDetail/f04ccc76f60c556ff422c558bd388078/1465010208041354">订单详情</a></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package chat;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Vector;
+
+
+import org.apache.struts2.ServletActionContext;
+
+import com.opensymphony.xwork2.ActionContext;
+
+public class Server {
+	private String from;
+	private String to;
+	private String content1;
+	private String username;
+	
+	public String getFrom() {
+		return from;
+	}
+	public void setFrom(String from) {
+		this.from = from;
+	}
+	public String getTo() {
+		return to;
+	}
+	public void setTo(String to) {
+		this.to = to;
+	}
+	
+	public String getContent1() {
+		return content1;
+	}
+	public void setContent1(String content1) {
+		this.content1 = content1;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getMessages(){
+		return "success";
+	}
+	public String loginRoom(){
+		ActionContext con = ActionContext.getContext();
+		User user = User.getInstance();
+		Vector<String> vector = user.getList();
+		boolean flag = true;
+		System.out.println("用户数量:"+vector.size());
+		for(int i=0;i<vector.size();i++){
+			System.out.println("vector"+i+":"+vector.elementAt(i)+" user:"+username);
+			if(username.equals(vector.elementAt(i))){
+				PrintWriter out;
+				try {
+					out = ServletActionContext.getResponse().getWriter();
+					out.println("<script language='javascript'>alert('该用户已经登录');window.location.href='index.jsp';</script>");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				flag=false;
+				break;
+			}
+		}
+		if(flag){
+			UserListener ul = new UserListener();
+			ul.setUser(username);
+			user.addUser(ul.getUser());
+			con.getSession().put("user", ul);
+			con.getSession().put("username", username);
+			
+		}
+		String sourceMessage="";
+		 if(null!=con.getApplication().get("message")){
+	            sourceMessage=con.getApplication().get("message").toString();
+	        }
+	        sourceMessage+="系统公告：<font color='gray'>" + username + "走进了聊天室！</font><br>";
+	        con.getApplication().put("message",sourceMessage);
+	     return "success";
+	}
+	
+	
+	public String sendMessages(){
+		 ActionContext con = ActionContext.getContext();
+         String sourceMessage = con.getApplication().get("message").toString();
+         sourceMessage += "<font color='blue'><strong>" + from + "</strong></font><font color='#CC0000'>"  + "</font>对<font color='green'>[" + to + "]</font>说："+content1 +"<br>";
+         con.getApplication().put("message", sourceMessage);
+         return "success";
+	}
+}
+
+
+
+<%@ page import="java.util.*"%>
+<%
+User list=User.getInstance();
+Vector vector=list.getList();
+int amount=0;
+%>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr><td height="32" align="center" class="word_orange ">欢迎来到心之语聊天室！</td></tr>
+  <tr>
+  <td height="23" align="center"><a  href="#" onclick="set('所有人')">所有人</a></td>
+  </tr>  
+ <%if(vector!=null&&vector.size()>0){
+	String username="";	 
+	amount=vector.size();
+		for(int i=0;i<amount;i++){
+			username=(String)vector.elementAt(i);
+		%>
+  <tr>
+    <td height="23" align="center"><a href="#" onclick="set('<%=username%>')"><%=username%></a></td>
+  </tr>
+<%}}%>
+<tr><td height="30" align="center">当前在线[<font color="#FF6600"><%=amount%></font>]人</td></tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<bean id="transactionManager"
+    class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+</bean>
+
+<!-- 配置事务通知 -->
+<tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+        <!-- 所有find开头的方法为只读，所有查询方法都以find开头 -->
+        <tx:method name="find*" read-only="true" />
+        <!-- 其余方法如果没有事务的时候，就开启新事务运行该方法，否则使用已有的事务运行该方法 -->
+        <!-- 关闭read-only保证save*,update*,delete*等方法可以修改数据 -->
+        <tx:method name="*" propagation="REQUIRED" read-only="false"/>
+    </tx:attributes>
+</tx:advice>
+
+<!-- 设置com.sx.dao包下及其子包下的类的所有方法都加上txAdvice事务通知切片（主要用于自动实现Hibernate事务的提交回滚等） -->
+<aop:config>
+    <aop:pointcut id="DaoPointCut" expression="execution(*dao..*.*(..))" />
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="DaoPointCut"/>
+</aop:config>

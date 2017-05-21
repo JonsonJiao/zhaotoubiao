@@ -1,0 +1,173 @@
+@CHARSET "UTF-8";
+  *{
+		margin: 0px;
+		padding: 0px;
+	}
+	body{
+		color:rgb(102,102,102);
+		font-size:14px;
+	}
+	a{
+		text-decoration:none;
+		color:rgb(43,160,227);
+	}
+	a:hover{
+		color:rgb(250,140,0);
+		cursor:pointer;
+	}
+	.top{
+		width: 100%;
+		height: 101px;
+	}
+	.top .topInclude{
+		width: 1000px;
+		height: 101px;
+		margin: 0 auto;
+	}
+	.top .topInclude .topLeft{
+		float: left;
+		margin-top:20px;
+		margin-left:25px;
+	}
+	.top .topInclude .topLeft span{
+		padding-top:5px;
+		font-size:12px;
+		line-height:25px;
+		display:block;
+		padding-left:20px;
+	}
+	.top .topInclude .topRight span{
+		float: right;
+		margin-top:35px;
+		margin-right:-80px;
+		font-size:14px;
+	}
+	.top .topInclude .topRight img{
+		float:right;
+		margin-right:90px;
+		margin-top:33px;
+	}
+	.top .topInclude .topLeft ul{
+		list-style: none;
+	}
+	.top .topInclude .topLeft ul li{
+		float: left;
+	}
+	.register{
+		width: 100%;
+		height: 101px;
+		border-top:1px solid rgb(221,221,221);
+	}
+	.register.topInclude{
+		width: 85%;
+		height: 101px;
+		margin: 0 auto;
+	}
+	.register .registerInclude{
+		width:1000px;
+		margin:0 auto;
+	}
+	.register .registerInclude .registerLeft{
+		width:184px;
+		height:699px;
+		float: left;
+		background-color:rgb(243,243,243);
+	}
+	.register .registerInclude .registerLeft ul{
+		list-style:none;
+	}
+	.register .registerInclude .registerLeft ul #span1,#span2{
+		position:absolute;
+		margin-left:10px;
+		font-size:15px;
+		font-family:"黑体";
+		color:black;
+	}
+	.register .registerInclude .registerLeft ul #span1{	
+		display: inline-block;
+		width: 175px;
+		height: 100px;
+		margin-left: -40px;
+		text-align: center;
+	}
+	.register .registerInclude .registerLeft ul #span2{
+		background-color:rgb(243,243,243);
+	}
+	.register .registerInclude #registerRight2{
+		display:none;
+	}
+	.register .registerInclude .registerLeft ul img{
+		margin-top:27px;
+	}
+	.register .registerInclude .registerLeft ul .bgcolor img{
+		margin-left: 30px;
+		float: left;
+	}
+	.register .registerInclude .registerLeft ul li{
+		width:150px;
+		height:90px;
+		line-height:90px;
+		margin-left:14px;
+		margin-top:20px;
+		padding-left:20px;
+		border-radius:3px;
+	}
+	.register .registerInclude .registerLeft ul li .bgcolor{
+		width: 175px;
+		height: 100px;
+		background-color:white;
+		margin-left: -31px;
+	}
+	.register .registerInclude #registerRight{
+		width:806px;
+		height:699px;
+		float: right;
+	}
+	.register .registerInclude #registerRight span{
+		display:block;
+		width:800px;
+		height:38px;
+		font-size:12px;
+		line-height:38px;
+		background-color:rgb(240,240,240);
+		text-indent:1em;
+		margin-top:10px;
+	}
+	.register .registerInclude #registerRight .registerForm{
+		padding-top: 60px;
+		padding-left:90px;
+	}
+
+	.register .registerInclude #registerRight .text{
+		width: 306px;
+		height: 26px;
+	}
+	.register .registerInclude #registerRight .submit{
+		width: 128px;
+		height: 30px;
+		border: 0px;
+		color:white;
+		background-color:rgb(34,174,251);
+		margin-left: 80px;
+	}
+	.register .registerInclude #registerRight .submit:hover{
+		cursor:pointer;
+		background-color:rgb(58,183,254);
+	}
+	.footer{
+		text-align:center;
+		font-size:12px;
+		line-height:26px;
+	}
+	.footer span a{
+		color:rgb(102,102,102);
+		padding-right:5px;
+	}
+	.footer span a:hover{
+		color:rgb(250,140,0);
+	}
+	.footer a:nth-of-type(1)::after,
+	.footer a:nth-of-type(2)::after,
+	.footer a:nth-of-type(3)::after{
+		content:' ' '|' ' ';
+	}

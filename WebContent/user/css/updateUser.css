@@ -1,0 +1,32 @@
+	.register{
+		width: 100%;
+		height: 400px;
+	}
+	.register.topInclude{
+		width: 85%;
+		height: 400px;
+		margin: 0 auto;
+	}
+	.register .registerInclude  .text{
+		width: 306px;
+		height: 26px;
+	}
+	.register .registerInclude  .submit{
+		width: 128px;
+		height: 30px;
+		border: 0px;
+		color:white;
+		background-color:rgb(34,174,251);
+		margin-top:10px;
+		margin-left: 110px;
+	}
+	.register .registerInclude  .registerForm{
+		padding-top: 60px;
+		padding-left:90px;
+	}
+	 .error{
+		width:250px !important;
+		margin-top: 0px !important;
+   		margin-left: 0px !important;
+		display: inline-block !important;
+	}

@@ -1,0 +1,82 @@
+	.product{
+		width: 1000px;
+		height: 920px;
+        margin: 0 auto;
+		margin-top: 20px;
+	}
+	.product .productInclude{
+		width: 1000px;
+		height:120px;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude  ul{
+		list-style: none;
+		float: left;
+	}
+	.product .productInclude  ul li{
+		float: left;
+	}
+	.product .productInclude .head{
+		width: 740px;
+		height: 30px;
+		margin: 0 auto;
+	}
+	.product .productInclude .mycenter-head .title1{
+		padding-left: 50px;
+	}
+	.product .productInclude .head .title2{
+		margin-left: 270px;
+	}
+	.product .productInclude .head .title3{
+		margin-left: 60px;
+	}
+	.product .productInclude .main{
+		width: 1000px;
+		height: 280px;
+		margin-top: 100px;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude .main .title span{
+		margin-top:20px;
+		display: block;
+	}
+	.product .productInclude .main .title{
+		width:400px;
+		height:140px;
+		float: left;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude .main .price{
+		color:red;
+		margin-left:4px;
+		width:110px;
+		height: 140px;
+		float: left;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude .main .remaining{
+		margin-left:4px;
+		width:476px;
+		height: 140px;
+		float: left;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude .main .other1{
+		margin-top: 3px;
+		width:1000px;
+		height: 133px;
+		float: left;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude .other2{
+		margin-top: 3px;
+		width:1000px;
+		height: 500px;
+		float: left;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude .index{
+		width: 300px;
+		height: 90px;
+		margin: 0 auto;
+	}

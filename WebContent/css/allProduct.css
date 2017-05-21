@@ -1,0 +1,107 @@
+    .product{
+        width: 100%;
+		height: 1040px;
+	}
+    .product .product_title1{
+        height: 36px;
+        width: 1000px;
+        border: 1px solid rgb(215, 215, 215);
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .product .product_title1 span{
+        margin-left: 60px;
+        line-height: 36px;
+    }
+    .product .product_title1 span a{
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+    .product .product_title2{
+        height: 30px;
+        width: 263px;
+        background-color: rgb(65, 144, 233);
+        margin-left: calc(((100vw - 1000px) / 2) + 10px);
+        border-radius: 2px;
+    }
+	.product .product_title2 span{
+		line-height: 30px;
+		font-size: 15px;
+		color: white;
+		margin-left: 3px;
+	}
+	.product .product_title3{
+        height: 36px;
+        width: 1000px;
+        background-color: rgb(248, 248, 248);
+        margin: 0 auto;
+		border-top: 2px solid rgb(65, 144, 233);
+		border-left: 1px solid rgb(215, 215, 215);
+		border-right: 1px solid rgb(215, 215, 215);
+    }
+	.product .product_title3 span{
+		line-height: 36px;
+		float: right;
+	}
+	.product .product_title3 span a{
+        margin-right: 37px;
+    }
+    .product .productInclude {
+		width: 1000px;
+		height: 900px;
+		margin: 0 auto;
+		border: 1px solid rgb(215, 215, 215);
+	}
+	.product .productInclude  ul li{
+		list-style: none;
+		float: left;
+	}
+	.product .productInclude .head{
+		width: 740px;
+		height: 30px;
+		margin: 10px auto; 
+	}
+	.product .productInclude .mycenter-head .title1{
+		padding-left: 50px;
+	}
+	.product .productInclude .head .title2{
+		margin-left: 305px;
+	}
+	.product .productInclude .head .title3{
+		margin-left: 60px;
+	}
+	.product .productInclude .main{
+		width: 740px;
+		height: 90px;
+		margin: 0 auto;
+		margin-top: 40px;
+		border: 1px solid black; 
+	}
+	.product .productInclude .index{
+		width: 300px;
+		height: 90px;
+		margin: 0 auto;
+	}
+	.product .productInclude .main .title span{
+		margin-top:20px;
+		display: block;
+	}
+	.product .productInclude .main .title{
+		width:380px;
+		float: left;
+	}
+	.product .productInclude .main .titleT{
+		color:blue;
+		font-size:16px;
+	}
+	.product .productInclude .main .price{
+		color:red;
+		margin-top:20px;
+		width:110px;
+		float: left;
+	}
+	.product .productInclude .main .remaining{
+		margin-top:20px;
+		width:80px;
+		float: left;
+	}

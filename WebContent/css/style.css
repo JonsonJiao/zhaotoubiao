@@ -1,0 +1,148 @@
+@font-face{
+	font-family: "迷你简双线体";
+	src: url("mini.TTF") format(truetype);
+}
+body{
+	background-color: lightblue;
+}
+section{
+	width: 778px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 8px darkgreen;
+}
+a {
+	font-size: 9pt;	
+	text-decoration: none;	
+	color: #3C404D;
+}
+section .table_one{ 
+	 width:778px; 
+	 height:150px; 
+	 /*background-repeat: no-repeat;*/
+	 background-size: 778px 150px;
+	 border:0; 
+	 border-collapse: collapse;
+	 margin-top: 50px;
+}
+section .table_one tr td span{
+	font-size: 32px;
+	color: green;
+	font-family: "迷你简双线体";
+	animation-name: bling;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+section .table_one tr td span:nth-of-type(1){
+	margin-left: 100px;
+}
+section .table_one tr td span:nth-of-type(2){
+	margin-left: 180px;
+}
+td{
+	font-size:12px;
+}
+.btn_grey {
+	font-family: "黑体";	
+	font-size: 9pt;
+	color: #333333;
+	background-color: #eeeeee;
+	cursor: pointer;
+	padding:1px;
+	height:26px;
+	width: 40px;
+	line-height: 26px;
+	border: 0px;
+	margin-left: 5px;
+	border-radius:6px;
+}
+.btn_grey:hover{
+	background-color: greenyellow;
+}
+.btn_grey:active{
+	background-color: green;
+	color: white;
+	border: 0px;
+	box-shadow: 0 0 1px white;
+}
+.btn_grey:focus{
+	border: 0px;
+	box-shadow: 0 0 0px;
+}
+#exit{
+	width: 60px;
+	float: left;
+	margin-left: 13px;
+}
+.btn_bg {
+	background-image:url(image/6.jpg); 
+	border:#436E9B thin 0px;
+	width:56px;
+	height:20px;padding:4px;
+	color:#FFFFFF;
+}
+
+input {
+	font-family: "楷体";
+	font-size: 14px;
+	color: #333333;
+	border: 1px solid #777777;
+	height: 26px;
+	line-height: 26px;
+	padding-left: 5px;
+}
+input:focus{
+	color: green;
+	border: 1px solid lawngreen;
+	box-shadow: 0 0 2px lawngreen;
+} 
+input.login {
+	font-family: "����";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #6f9c61;
+	width:150px;
+    height:22px;
+}
+.wenbenkuang {
+	font-family: "����";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #444444;
+}
+
+
+.noborder{
+border-style:none;
+position: absolute;
+margin-left:-60px; 
+margin-top: -13px;
+}
+
+#content{
+	margin-left: 5px;
+	height:290px; 
+	overflow:hidden;
+	word-wrap: break-word; 
+	color: green;
+	font-size: 14px;
+}
+@keyframes bling{
+	0%{
+		color: darkgreen;
+	}
+	20%{
+		color: greenyellow;
+	}
+	40%{
+		color: lawngreen;
+	}
+	60%{
+		color: limegreen;
+	}
+	80%{
+		color: green;
+	}
+	100%{
+		color: darkgreen;
+	}
+}

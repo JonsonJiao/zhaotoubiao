@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+	<field name="productName">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入商品名</message>		
+		</field-validator>
+	</field>
+	<field name="game">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入游戏名</message>		
+		</field-validator>
+	</field>
+	<field name="level">
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入等级</message>		
+		</field-validator>
+	</field>
+	<field name="price">
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入价格</message>		
+		</field-validator>
+	</field>
+	<field name="information">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入描述</message>		
+		</field-validator>
+	</field>
+	<field name="account">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入账号</message>		
+		</field-validator>
+	</field>
+	<field name="system">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入系统</message>		
+		</field-validator>
+	</field>
+	<field name="password">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>必须输入密码</message>		
+		</field-validator>
+	</field>
+</validators>
+		

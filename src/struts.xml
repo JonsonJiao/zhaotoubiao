@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.convention.result.path" value="/"/>
+	<constant name="struts.ui.theme" value="simple"></constant> 
+	<package name = "action" extends = "struts-default" >
+		<action name="register" class="login" method="register">
+			<result name="success">/user/geRenZhongXin.jsp</result>
+			<result name ="input">register.jsp</result>
+		</action>
+		<action name="login" class="login" method="login">
+			<result name="success">/user/enter.jsp</result>
+			<result name ="input">login.jsp</result>
+		</action>
+	</package>
+	<package name = "action2" extends = "struts-default" namespace="/admin">
+		<action name="AdminLogin" class="adminLogin" method="login">
+			<result name="success">user.jsp</result>
+			<result name="input">aLogin.jsp</result>
+		</action>
+		<action name="Limit" class="limit" method="limitUser">
+			<result name="success">user.jsp</result>
+			<result name="input">aLogin.jsp</result>
+		</action>
+		<action name="checkCompany" class="companyManage" method="checkCompany">
+			<result name="success">company.jsp</result>
+		</action>
+	</package>
+	<package name = "action3" extends = "struts-default" namespace="/user">
+		<interceptors>
+			<interceptor name="session" class="sessionInterceptor"></interceptor>
+			<interceptor-stack name="main">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="session"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<action name="Sell" class= "sell" method="sell">
+			<result name="success">showProduct.jsp</result>
+			<result name ="input">sell.jsp</result>
+			<result name="login">login.jsp</result>
+			<interceptor-ref name="main"></interceptor-ref>
+		</action>
+		<action name="UpdateProduct" class= "sell" method="update">
+			<result name="success">showProduct.jsp</result>
+			<result name ="input">sell.jsp</result>
+			<result name="login">login.jsp</result>
+		</action>
+		<action name="DeleteProduct" class= "delete" method="delete">
+			<result name="success">showProduct.jsp</result>
+			<result name ="input">showProduct.jsp</result>
+			<result name="login">login.jsp</result>
+		</action>
+		<action name="Buy" class= "buy" method="buy">
+			<result name="success">showBuyOrder.jsp</result>
+			<result name ="fail">sell.jsp</result>
+			<result name="login">login.jsp</result>
+			<interceptor-ref name="main"></interceptor-ref>
+		</action>
+		<action name="sendMessages" class="server" method="sendMessages">
+			<result name="success">content.jsp</result>
+		</action>
+		<action name="getMessages" class="server" method="getMessages">
+			<result name="success">content.jsp</result>
+		</action>
+		<action name="KsendMessages" class="kServer" method="sendMessages">
+			<result name="success">content.jsp</result>
+		</action>
+		<action name="KgetMessages" class="kServer" method="getMessages">
+			<result name="success">content.jsp</result>
+		</action>
+		<action name="leave" class="server" method="leave">
+			<result name="success">shouYe.jsp</result>
+		</action>
+		<action name="DeleteMessage" class="messages" method="delete">
+			<result name="success">showMessage.jsp</result>
+		</action>
+		<action name="addCompany" class="companyManage" method="addCompany">
+			<result name="success">showCompany.jsp</result>
+		</action>
+		<action name="deleteCompany" class="companyManage" method="deleteCompany">
+			<result name="success">showCompany.jsp</result>
+		</action>
+		<action name="addZhaoBiao" class="zhaoBiaoManage" method="addZhaoBiao">
+			<result name="success">showZhaoBiao.jsp</result>
+		</action>
+		<action name="touBiao" class="touBiaoManage" method="touBiao">
+			<result name="success">showTouBiao.jsp</result>
+		</action>
+		<action name="changeZhaoBiao" class="zhaoBiaoManage" method="changeZhaoBiao">
+			<result name="success">showZhaoBiao.jsp</result>
+		</action>
+		<action name="UpdateUser" class="login" method="update">
+			<result name="success">geRenZhongXin.jsp</result>
+			<result name="input">updateUser.jsp</result>
+		</action>
+	</package>
+</struts>

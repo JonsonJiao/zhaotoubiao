@@ -1,0 +1,127 @@
+	.managementRight .search .search1 form{
+		margin-left: 35px;
+	}
+	.managementRight .search .search1 section{
+		margin-top: 15px;
+		width: 250px;
+		display: inline-block;
+	}
+	.managementRight .search .search1 section option{
+		width: 150px;
+		height: 20px;	
+	}
+	.managementRight .search .search1 section:nth-of-type(3) input{
+		width: 80px;
+		height: 20px;	
+	}
+	.managementRight .search .search1 input{
+		width: 70px;	
+	}
+	.managementRight .search .search2{
+		margin-top: 20px;
+		margin-left: 35px;
+	}
+	.managementRight .search .search2 ul{
+		list-style: none;
+		float: left;
+		border-bottom: 2px solid rgb(65, 144, 233);
+		width: 100%;
+	}
+	.managementRight .search .search2 ul li{
+		float: left;
+		margin-left: 20px;
+		background-color: rgb(241, 241, 241);
+		border-top: 1px solid rgb(224, 224, 224);
+		width: 90px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+	}
+	.managementRight .search .search2 ul li:active{
+		background-color: rgb(65, 144, 233);
+	}
+	.managementRight .search .search3{
+		margin-top: 50px;
+		margin-left: 35px;
+	}
+	.managementRight .search .search3 ul{
+		list-style: none;
+		float: right;
+	}
+	.managementRight .search .search3 ul li,
+	.managementRight .search .search4  ul li{
+		float: left;
+	}
+	.managementRight .search .search4{
+		margin-top: 70px;
+		margin-left: 35px;
+	}
+	.managementRight .search .search4 .mycenter-sort{
+		width: 100%;
+		height: 30px;
+	}
+	.managementRight .search .search4 .mycenter-sort span{
+		display: inline-block;
+		margin-top: 0px;
+		margin-left: 0px;
+	}
+	.managementRight .search .search4 .mycenter-sort .select{
+		display: inline-block;
+		margin-left: 15px;
+		width: 150px;
+	}
+	.managementRight .search .search4 .mycenter-head{
+		width: 100%;
+		height: 30px;
+		border-top:1px solid rgb(215,215,215);
+		border-bottom:1px solid rgb(215,215,215);
+		background-color: rgb(248, 248, 248);
+	}
+	.managementRight .search .search4  ul{
+		list-style: none;
+		float: left;
+	}
+	.managementRight .search .search4 .mycenter-head li{
+		margin-left: 18px;
+		margin-right: 91px;
+		margin-top: 5px;
+	}
+	.managementRight .search .search4 .con{
+		width: 750px;
+	}
+	.managementRight .search .search4 .con span{
+		display: inline-block;
+		height: 80px;
+		text-align: center;
+		word-wrap: break-word;
+		float: left;
+	}
+	.managementRight .search .search4 .con .name{
+		width: 140px;	
+		margin-left: 10px;
+	}
+	.managementRight .search .search4 .con .unit{
+		width: 90px;
+		margin-left: 10px;
+	}
+	.managementRight .search .search4 .con .count{
+		width: 50px;	
+		margin-left: 90px;	
+		margin-top: 15px;
+	}
+	.managementRight .search .search4 .con .status{
+		margin-left: 80px;
+		width: 86px;
+	}
+	.managementRight .search .search4 .con .check{
+		margin-left:60px;
+		width: 86px;
+	}
+	.management .managementInclude .managementRight .search  .index{
+		width: 300px;
+		height: 90px;
+		margin: 0 auto;
+	}
+	
+
+

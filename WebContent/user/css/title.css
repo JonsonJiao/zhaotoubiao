@@ -1,0 +1,141 @@
+    *{
+		margin: 0px;
+		padding: 0px;
+        font-size:13px;
+	}
+	 a{
+        text-decoration:none;
+        color:black;
+    }
+    a:hover{
+        color:rgb(255,132,0);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+	.top{
+		width: 1000px;
+		height: 36px;
+        margin: 0 auto;
+	}
+	.top .topinclude{
+		width: 1000px;
+		height: 36px;
+		margin: 0 auto;
+	}
+	.top .topleft ul{
+		list-style: none;
+		float: left;
+        margin-top:10px;
+        margin-left: 5px;
+	}
+	.top .topleft ul li{
+		float: left;
+		margin-right: 5px;
+	}
+	.top .topright ul {
+		list-style: none;
+		float: right;
+        margin-top:10px;
+        margin-left: 5px;
+	}
+	.top .topright ul li{
+		float: left;
+		margin-right: 5px;
+	}
+	.logo{
+		width: 1000px;
+		height: 61px;
+        margin: 0 auto;
+	}
+	.logo .search{
+		float: right;
+        margin-right: 3px;
+        margin-top: 10px;
+	}
+	.logo .logopic{
+		float: left;
+	}
+	.logo .search .text{
+		width:340px;
+		height:26px;
+        border: 2px solid rgb(77, 146, 224);
+	}
+	.logo .search .button{
+		width:70px;
+		height:30px;
+		font-size: 12px;
+		color: white;
+		background-color: rgb(77, 146, 224);
+		border: 0px;
+	}
+    .top .topright ul li #image1,#image2{
+        width: 15px;
+        height: 22px;
+        overflow: hidden;
+        margin-left:-2px;
+        margin-top: -3px;
+         position: absolute;
+    }
+    .top .topright ul li #image1 img{
+        margin-left:-15px;
+    }
+    .top .topright ul li #image2 img{
+        margin-left:-1px;
+    }
+     .top .topright ul li .download{
+        float: right;
+        margin-left:17px;
+        margin-top: 3px;
+    }
+    .navigation{
+		clear:both;
+		width: 100%;
+		background-color:rgb(72,72,76);
+		height: 36px;
+	}
+	.navigationinclude{
+		width: 1000px;
+		height:36px;
+		margin: 0 auto;
+	}
+	.navigation .navigationinclude>input{
+		width:140px;
+        height: 35px;
+		margin: 0 auto;
+		opacity: 0;
+		z-index:1000;
+		border: 1px solid;
+	}
+	.navigation .navigationinclude>input:hover{
+		cursor: pointer;
+	}
+	.navigation .navigationinclude a{
+		width:140px;
+        height: 36px;
+		color: white;
+		font-size: 15px;
+        font-family: "黑体";
+        line-height: 36px;
+        text-align: center;
+		margin-left: -140px;
+		margin-top: -20px;
+		text-decoration:none;
+		z-index:10;
+		display:inline-block;
+	}
+	.navigation .navigationinclude .word{
+		font-size: 15px;
+		position: absolute;
+		margin-top: 0px;
+		margin-left: -20px;
+	}
+	.navigation .navigationinclude a:hover{
+		height: 35px;
+        text-decoration:none;
+        background-color: rgb(89, 89, 93);
+    }
+	.navigation .navigationinclude input:checked + a{
+		border-bottom:3px solid rgb(72,158,255);
+		height: 32px;
+		background-color:black;
+	}

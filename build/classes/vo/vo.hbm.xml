@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-mapping package="vo">
+
+	<class name ="User" table="user">
+		<id name="username">
+		
+		</id>
+		<property name ="type"/>
+		<property name ="password"/>
+		<property name ="name"/>
+		<property name ="email"/>
+		<property name ="state"/>
+	</class>
+	
+	<class name ="ZhaoBiao" table="zhaobiao" >
+		<id name="id" >
+			<generator class="native"/>
+		</id>
+		<property name="companyId" />
+		<property name="companyName"/>
+		<property name="companyType"/>
+		<property name="userName"/>
+		<property name="phone"/>
+		<property name="email"/>
+		<property name="title"/>
+		<property name="zhongBiaoId"/>
+		<property name="state"/>
+		<property name="zhaoBiaoText"/>
+		<property name="updateDate"/>
+	</class>
+	
+	<class name ="TouBiao" table="touBiao">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="workTime"/>
+		<property name="money"/>
+		<property name="zhaoBiaoId"/>
+		<property name="companyId"/>
+		<property name="score"/>
+		<property name="scoreId"/>
+		<property name="updateDate"/>
+	</class>
+	<class name ="Work" table="work">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+
+		<property name="zhaoBiaoId"/>
+		<property name="zhongBiaoId"/>
+		<property name="workText"/>
+		<property name="workReply"/>
+		<property name="progress"/>
+		<property name="workTime"/>
+		<property name="workquality"/>
+	</class>
+	<class name ="Chat" table="kefu">
+			<id name="User">
+			</id>
+			<property name="text"/>
+	</class>
+	<class name ="Message" table="message">
+			<id name="listIndex">
+				<generator class="native"/>
+			</id>
+			<property name="text"/>
+			<property name="own"/>
+			<property name="title"/>
+			<property name="time"/>
+			<property name="type"/>
+			<property name="see"/>
+	</class>
+	<class name ="Admin" table="admin">
+			<id name="userName">
+			</id>
+			<property name="name"/>
+			<property name="password"/>
+			<property name="level"/>
+	</class>
+	<class name ="Credit" table="credit">
+			<id name="id">
+			</id>
+			<property name="type"/>
+			<property name="workCount"/>
+			<property name="workTime"/>
+			<property name="zhaoBiaoCount"/>
+			<property name="workquality"/>
+	</class>
+	<class name ="Company" table="company">
+			<id name="id">
+				<generator class="native"/>
+			</id>
+			<property name="own"/>
+			<property name="companyName"/>
+			<property name="lianXiRen"/>
+			<property name="position"/>
+			<property name="phone"/>
+			<property name="address"/>
+			<property name="code"/>
+			<property name="state"/>
+			<property name="stateText"/>
+	</class>
+	<class name ="Code" table="code">
+			<id name="num">
+				<generator class="native"/>
+			</id>
+			<property name="id"/>
+			<property name="text"/>
+			<property name="type"/>
+	</class>
+	
+	
+	
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+    .managementRight .search .search2,.a{
+		margin-top: 20px;
+		margin-left: 35px;
+	}
+    .managementRight .search .a{
+        display: block;
+        width: 100px;
+        height: 25px;
+        border: 1px solid rgb(213, 213, 213);
+        line-height: 25px;
+        text-align: center;
+        background-color: rgb(247, 247, 247);
+        margin-left: 80px;
+    }
+    .managementRight .search a{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .managementRight .search a:hover{
+        color: black;
+        text-decoration: none;
+    }
+    .managementRight .search .a:hover{
+        background-color: white;
+        cursor: pointer;
+    }
+    .managementRight .search .search2 hr{
+        margin-left: 0px;
+    }
+    .managementRight .search .search2 span{
+        margin-right: 20px;
+        margin-left: 0px;
+        display: inline-block;
+    }
+    .managementRight .search .search2 span:nth-of-type(4){
+        margin-bottom: 20px;
+    }
+    .managementRight .search .search2 a{
+        margin-left: 40px;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 30px;
+    }
+    .managementRight .search .search2 a:hover{
+        color: rgb(255,142,0);
+        text-decoration: underline;s
+    }

@@ -1,0 +1,53 @@
+#search,#message{
+	margin-top: 20px;
+	margin-left: 35px;
+}
+#search .firstTr{
+	background-color:rgb(242,242,242);
+}
+#search tr,
+#message tr{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+}
+#search tr th,
+#message tr th{
+	display:inline-block;
+	width:125px;
+	font-weight:normal;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+#search tr th{
+	text-align:center;
+}
+tr th a{
+	color:#322e32 !important;
+}
+tr th a:hover{
+	color:#f07 !important;
+	text-decoration:none;
+}
+#message tr{
+	display:block;
+	width:100%;
+}
+#message tr th{
+	width:100%;
+	text-align:left;
+}
+.aButton{
+	display: inline-block;
+    width: 100px;
+    height: 36px;
+    line-height: 36px;
+    background-color: rgb(255,132,0);
+    color: white !important;
+    text-align: center;
+    border-radius: 5px;
+}
+.aButton:hover{
+	color:#ddd !important;
+}

@@ -1,0 +1,15 @@
+.management .managementInclude .managementRight{
+		margin-top:10px;
+	}
+	.management .managementInclude .managementRight .search{
+		margin: 1px solid;
+	}
+	.management .managementInclude .managementRight .search ul{
+		margin-top:20px;
+		list-style: none;
+		margin-left: 35px;
+	}
+	.management .managementInclude .managementRight .search ul .title{
+		margin-left: 0px;
+		font-size: 15px;
+	}

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       	<!-- Action -->
+	<bean id="login" class="action.Login" scope="prototype">
+		<property name="userProxy" ref="userProxy"></property>
+	</bean>
+	<bean id="delete" class="action.Delete" scope="prototype">
+		<property name="messageProxy" ref="messageProxy"></property>
+		<property name="message" ref="message"></property>	
+	</bean>
+	<bean id="companyManage" class="action.CompanyManage" scope="prototype">
+		<property name="messageProxy" ref="messageProxy"></property>
+		<property name="companyProxy" ref="companyProxy"></property>
+	</bean>
+	<bean id="zhaoBiaoManage" class="action.ZhaoBiaoManage" scope="prototype">
+		<property name="messageProxy" ref="messageProxy"></property>
+		<property name="zhaoBiaoProxy" ref="zhaoBiaoProxy"></property>
+		<property name="creditProxy" ref="creditProxy"></property>
+	</bean>
+	<bean id="touBiaoManage" class="action.TouBiaoManage" scope="prototype">
+		<property name="messageProxy" ref="messageProxy"></property>
+		<property name="touBiaoProxy" ref="touBiaoProxy"></property>
+		<property name="creditProxy" ref="creditProxy"></property>
+	</bean>
+	<bean id="limit" class="action.Limit" scope="prototype">
+		<property name="userProxy" ref="userProxy"></property>
+	</bean>
+	<bean id="buy" class="action.Buy" scope="prototype">
+		<property name="messageProxy" ref="messageProxy"></property>
+		<property name="message" ref="message"></property>		
+		<property name="messageBuy" ref="message"></property>		
+	</bean>
+	<bean id="messages" class="action.Messages" scope="prototype">
+		<property name="messageProxy" ref="messageProxy"></property>
+		<property name="message" ref="message"></property>
+	</bean>
+	<bean id="server" class="action.Server" scope="prototype">
+		<property name="chatProxy" ref="chatProxy"/>
+	</bean>
+	<bean id="kServer" class="action.KServer" scope="prototype">
+		<property name="chatProxy" ref="chatProxy"/>
+	</bean>
+	<bean id="sell" class="action.Sell" scope="prototype">
+		<property name="messageProxy" ref="messageProxy"></property>
+		<property name="message" ref="message"></property>		
+	</bean>
+	<bean id="sessionInterceptor" class="interceptor.SessionInterceptor" scope="prototype">
+	</bean>
+	<bean id="adminLogin" class="action.AdminLogin" scope="prototype">
+		<property name="adminProxy" ref="adminProxy"></property>
+		<property name="admin" ref="admin"></property>	
+	</bean>
+	<!-- 数据库执行类 -->
+	<bean id="messageHow" class="dao.MessageHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="userHow" class="dao.UserHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="workHow" class="dao.WorkHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="creditHow" class="dao.CreditHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="adminHow" class="dao.AdminHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="chatHow" class="dao.ChatHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="zhaoBiaoHow" class="dao.ZhaoBiaoHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="touBiaoHow" class="dao.TouBiaoHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="companyHow" class="dao.CompanyHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	<bean id="codeHow" class="dao.CodeHow">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 
+	
+	<!-- 代理类及工厂 -->
+	<bean id="userProxy" class="dao.UserProxy">
+		<property name="userHow" ref="userHow"></property>
+	</bean>
+	<bean id="userFactory" class="factory.UserFactory">
+		<property name="proxy" ref="userProxy"></property>
+	</bean>
+	<bean id="zhaoBiaoProxy" class="dao.ZhaoBiaoProxy">
+		<property name="zhaoBiaoHow" ref="zhaoBiaoHow"></property>
+	</bean>
+	
+	<bean id="zhaoBiaoFactory" class="factory.ZhaoBiaoFactory">
+		<property name="proxy" ref="zhaoBiaoProxy"></property>
+	</bean>
+	<bean id="workProxy" class="dao.WorkProxy">
+		<property name="workHow" ref="workHow"></property>
+	</bean>
+	<bean id="workFactory" class="factory.WorkFactory">
+		<property name="proxy" ref="workProxy"></property>
+	</bean>
+	<bean id="touBiaoProxy" class="dao.TouBiaoProxy">
+		<property name="touBiaoHow" ref="touBiaoHow"></property>
+	</bean>
+	<bean id="touBiaoFactory" class="factory.TouBiaoFactory">
+		<property name="proxy" ref="touBiaoProxy"></property>
+	</bean>
+	<bean id="chatProxy" class="dao.ChatProxy">
+		<property name="chatHow" ref= "chatHow"></property>
+	</bean>
+	<bean id="chatFactory" class="factory.ChatFactory">
+		<property name="proxy" ref="chatProxy"></property>
+	</bean>
+	<bean id="messageProxy" class="dao.MessageProxy">
+		<property name="messageHow" ref="messageHow"></property>
+	</bean>
+	<bean id="messageFactory" class="factory.MessageFactory">
+		<property name="proxy" ref="messageProxy"></property>
+	</bean>
+	<bean id="adminProxy" class="dao.AdminProxy">
+		<property name="adminHow" ref="adminHow"></property>
+	</bean>
+	<bean id="adminFactory" class="factory.AdminFactory">
+		<property name="proxy" ref="adminProxy"></property>
+	</bean>
+	<bean id="creditProxy" class="dao.CreditProxy">
+		<property name="creditHow" ref="creditHow"></property>
+	</bean>
+	<bean id="creditFactory" class="factory.CreditFactory">
+		<property name="proxy" ref="creditProxy"></property>
+	</bean>
+	<bean id="companyProxy" class="dao.CompanyProxy">
+		<property name="companyHow" ref="companyHow"></property>
+	</bean>
+	<bean id="companyFactory" class="factory.CompanyFactory">
+		<property name="proxy" ref="companyProxy"></property>
+	</bean>
+	<bean id="codeProxy" class="dao.CodeProxy">
+		<property name="codeHow" ref="codeHow"></property>
+	</bean>
+	<bean id="codeFactory" class="factory.CodeFactory">
+		<property name="proxy" ref="codeProxy"></property>
+	</bean>
+	
+	
+	<!-- VO类 -->
+	<bean id="code" class="vo.Code" scope="prototype"></bean>
+	<bean id="chat" class="vo.Chat" scope="prototype"></bean>
+	<bean id="company" class="vo.Company" scope="prototype"></bean>
+	<bean id="credit" class="vo.Credit" scope="prototype"></bean>
+	<bean id="user" class="vo.User" scope="prototype"></bean>
+	<bean id="message" class="vo.Message" scope="prototype"></bean>
+	<bean id="admin" class="vo.Admin" scope="prototype"></bean>
+	<bean id="touBiao" class="vo.TouBiao" scope="prototype"></bean>
+	<bean id="work" class="vo.Work" scope="prototype"></bean>
+	<bean id="zhaoBiao" class="vo.ZhaoBiao" scope="prototype"></bean>
+	
+	
+	<!--数据库支持文件  -->
+ <bean id="txManager"
+  class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+  <property name="sessionFactory" ref="sessionFactory" />
+ </bean>
+
+<aop:config proxy-target-class="true">  
+  <aop:pointcut id="bussinessService"
+   expression="execution(* factory.*.*(..))" />
+   <aop:pointcut id="bussinessService"
+   expression="execution(* action.*.*(..))" />
+   <aop:pointcut id="bussinessService"
+   expression="execution(* dao.*.*(..))" />
+  <aop:advisor pointcut-ref="bussinessService"
+   advice-ref="txAdvice" />
+ </aop:config>
+
+ <tx:advice id="txAdvice" transaction-manager="txManager">
+  <tx:attributes>
+   <tx:method name="*"  read-only="false"/>
+  </tx:attributes>
+ </tx:advice>
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/zhaobiao"/>
+		<property name="user" value="root"/>
+		<property name="password" value=""/>
+		<property name="maxPoolSize" value="40"/>
+		<property name="minPoolSize" value="1"/>
+		<property name="initialPoolSize" value="1"/>
+		<property name="maxIdleTime" value="20"/>
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mappingResources">
+			<list>
+				<value>vo/vo.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+				hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=true
+			</value>
+		</property>
+	
+	</bean>
+	
+ </beans>
